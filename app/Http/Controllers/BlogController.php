@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BlogPost;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
-class BlogPostController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +13,8 @@ class BlogPostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        $home = 'home page';
-        return view('post.index',['home'=>$home]);
+    {
+        //
     }
 
     /**
@@ -25,7 +24,7 @@ class BlogPostController extends Controller
      */
     public function create()
     {
-        return view('post.create');
+        //
     }
 
     /**
@@ -42,10 +41,10 @@ class BlogPostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\BlogPost  $blogPost
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(BlogPost $blogPost)
+    public function show(Blog $blog)
     {
         //
     }
@@ -53,10 +52,10 @@ class BlogPostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\BlogPost  $blogPost
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function edit(BlogPost $blogPost)
+    public function edit(Blog $blog)
     {
         //
     }
@@ -65,10 +64,10 @@ class BlogPostController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\BlogPost  $blogPost
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BlogPost $blogPost)
+    public function update(Request $request, Blog $blog)
     {
         //
     }
@@ -76,10 +75,10 @@ class BlogPostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\BlogPost  $blogPost
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BlogPost $blogPost)
+    public function destroy(Blog $blog)
     {
         //
     }

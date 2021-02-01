@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBlogPostsTable extends Migration
+class CreateBlogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateBlogPostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('blog_posts', function (Blueprint $table) {
+        Schema::create('blogs', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('body');
@@ -22,7 +23,10 @@ class CreateBlogPostsTable extends Migration
             $table->string('post_img');
             $table->enum('status',['draft','published','deleted_by_user','removed_by_Admin'])->default('draft');
             $table->timestamps();
+
+            $table->foreignId('user_id')->references('id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
         });
+
     }
 
     /**
@@ -32,6 +36,6 @@ class CreateBlogPostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blog_posts');
+        Schema::dropIfExists('blogs');
     }
 }
