@@ -14,5 +14,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+
+        $this->call([
+            create_roles_table_seeder::class,
+            admin_seeder::class,
+            
+        ]);
     }
 }

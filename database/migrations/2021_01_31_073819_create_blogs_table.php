@@ -15,7 +15,7 @@ class CreateBlogsTable extends Migration
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('body');
@@ -24,7 +24,7 @@ class CreateBlogsTable extends Migration
             $table->enum('status',['draft','published','deleted_by_user','removed_by_Admin'])->default('draft');
             $table->timestamps();
 
-            $table->foreignId('user_id')->references('id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
 
     }

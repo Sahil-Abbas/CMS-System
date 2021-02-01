@@ -16,9 +16,16 @@ class CreateCommentsTable extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->string('comment');
-            $table->string('reply');
+            $table->unsignedBigInteger('blog_id');
+            $table->unsignedBigInteger('user_id');
+            $table->string('user_ip');
             $table->enum('status',['published','deleted_by_user','removed_by_admin'])->default('published');
             $table->timestamps();
+
+
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+
+            $table->foreign('blog_id')->references('id')->on('blogs')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

@@ -2,7 +2,7 @@
 
 @section("content")
     <div class="container">
-        <form action="{{ route('posts.store') }}" method="post">
+        <form action="{{ route('post.store') }}" method="post">
             @csrf
     
             <div class="form-group">
@@ -17,4 +17,4 @@
         </form>
     </div>
 
-@endsection()
+@endsection
