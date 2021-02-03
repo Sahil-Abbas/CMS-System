@@ -47,9 +47,18 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ route('post.index') }}">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('post.create') }}">Create Post</a>
+                <li class="nav-item dropdown">
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Posts
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">all Posts </a>
+                    <a class="dropdown-item" href="{{ route('post.create') }}">Create Post</a>
+                    </div>
                 </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     categories
@@ -57,12 +66,10 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{route('category.index')}}">All Categories</a>
                     <a class="dropdown-item" href="{{route('category.create')}}">Create Category </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Disabled</a>
+                    <a class="nav-link" href="#">About Us</a>
                 </li>
             </ul>
             <!-- <form class="form-inline my-2 my-lg-0">

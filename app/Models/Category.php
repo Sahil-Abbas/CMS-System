@@ -11,7 +11,8 @@ class Category extends Model
 
     protected $fillable = ['name'];
 
-    public function post(){
-        return $this->belongsToMany(Blog::class);
+
+    public function blog(){
+        return $this->belongsToMany(Blog::class,'blog_categories');
     }
 }
