@@ -2,8 +2,6 @@
 
 @section("content")
     <div class="container">
-    
-
         @foreach($blogs as $blog)
             <div class="jumbotron my-2">
                 <a href="{{ route('post.show',$blog->id) }}"><h1>{{ $blog->title }}</h1></a>

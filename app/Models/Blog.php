@@ -18,7 +18,7 @@ class Blog extends Model
     }
 
     public function category(){
-        return $this->belongsToMany(Category::class);
+        return $this->belongsToMany(Category::class)/*->withPivot(['category_id','blog_id'])*/;
     }
 
     public function commnent(){

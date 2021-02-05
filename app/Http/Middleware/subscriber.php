@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use App\Models\Blog;
 
 class subscriber
 {
@@ -16,9 +17,14 @@ class subscriber
      */
     public function handle(Request $request, Closure $next)
     {   
-        if($request->user()->id === $request->blog()->user_id){
+        $blog_id = $request->id;
+
+        $blog = Blog::find($blog_id)->user_id;
+
+        if($request->user()->id === $blog && $request->user()->id == 3){
             return $next($request);
         }
+
         return redirect('/');
     }
 }

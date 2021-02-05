@@ -23,6 +23,20 @@
                 <label for="body">Post body</label>
                 <textarea class="form-control" name="body" id="body" cols="30" rows="10" >{{$blog['body']}}</textarea>
             </div>
+            <div>
+            {{$used ? 'used:' : ''}}
+            @foreach($used as $u)
+            {{$u->name}}
+            <input type="checkbox" name="categories[]" value="{{$u->id}}" checked>
+            @endforeach
+            </div>
+            <div>
+            {{$used ? 'Available:' : ''}}
+            @foreach($unused as $u)
+            {{$u->name}}
+            <input type="checkbox" name="categories[]" value="{{$u->id}}">
+            @endforeach
+            </div>
             <button class="btn btn-primary float-right" type="submit">Submit</button>
         </form>
     </div>
